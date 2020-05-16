@@ -1,0 +1,550 @@
+\documentclass[a4paper,12pt]{article}
+%
+% Change this for new assignments
+%
+\usepackage{amsmath}
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{ctable}
+\usepackage{upgreek}
+%\usepackage{epsfig}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{color}
+\usepackage{cancel}
+%\usepackage{epsf}
+\usepackage{marginnote}
+%\usepackage{eufrak}
+\usepackage{amsfonts}
+%%----------------------------------------------------------------------
+%%----------------------------------------------------------------------
+%%----------------------------------------------------------------------
+%%----------------------------------------------------------------------
+%%my definitions
+\newcommand{\bcen}{\begin{center}}
+\newcommand{\ecen}{\end{center}}
+\newcommand{\btab}{\begin{tabular}}
+\newcommand{\etab}{\end{tabular}}
+\newcommand{\bdes}{\begin{description}}
+\newcommand{\edes}{\end{description}}
+\newcommand{\mc}{\multicolumn}
+\newcommand{\ul}{\underline}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\non}{\nonumber}
+%\newcommand{\etal}{et.~al.\ }
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\bary}{\begin{array}}
+\newcommand{\eary}{\end{array}}
+\newcommand{\benum}{\begin{enumerate}}
+\newcommand{\eenum}{\end{enumerate}}
+\newcommand{\bitem}{\begin{itemize}}
+\newcommand{\eitem}{\end{itemize}}
+\newcommand{\cuup}[1]{c_{#1 \uparrow}}
+\newcommand{\cdown}[1]{c_{#1 \downarrow}}
+\newcommand{\cdup}[1]{c^\dagger_{#1 \uparrow}}
+\newcommand{\cddown}[1]{c^\dagger_{#1 \downarrow}}
+%
+%bold greek characters
+%
+\newcommand{\beps}{\mbox{\boldmath $ \epsilon $}}
+\newcommand{\bsig}{\mbox{\boldmath $ \sigma $}}
+\newcommand{\bpi}{\mbox{\boldmath $ \pi $}}
+\newcommand{\bkap}{\mbox{\boldmath $ \kappa $}}
+\newcommand{\bgam}{\mbox{\boldmath $ \gamma $}}
+\newcommand{\bphi}{\mbox{\boldmath $ \phi $}}
+\newcommand{\balp}{\mbox{\boldmath $ \alpha $}}
+\newcommand{\beot}{\mbox{\boldmath $ \eta $}}
+\newcommand{\btau}{\mbox{\boldmath $ \tau $}}
+\newcommand{\blam}{{\boldsymbol{\lambda}}}
+\newcommand{\bomg}{\mbox{\boldmath $ \omega $}}
+\newcommand{\bOmg}{\mbox{\boldmath $ \Omega $}}
+\newcommand{\bxhi}{\mbox{\boldmath $ \xi $}}
+\newcommand{\bmu} {\mbox{\boldmath $ \mu $}}
+\newcommand{\bnu} {\mbox{\boldmath $ \nu $}}
+\newcommand{\bdelta}{{\boldsymbol{\delta}}}
+\newcommand{\bpsi}{\mbox{\boldmath $ \psi $}}
+\newcommand{\brho}{\mbox{\boldmath $ \rho $}}
+\newcommand{\bGam}{\mbox{\boldmath $ \Gamma $}}
+\newcommand{\bLam}{\mbox{\boldmath $ \Lambda $}}
+\newcommand{\bPhi}{\mbox{\boldmath $ \Phi $}}
+\newcommand{\bOne}{{\boldsymbol 1}}
+%
+%bold latin
+%
+%\newcommand{\ba} { \mbox{\boldmath $a$}}
+\newcommand{\ba} { \bm{a} }
+\newcommand{\bb} { \mbox{\boldmath $b$}}
+%\newcommand{\bc} { \mbox{\boldmath $c$}}
+\newcommand{\bc} { {\mathbf c} }
+\newcommand{\bd} { \mbox{\boldmath $d$}}
+\newcommand{\be} { \mbox{\boldmath $e$}}
+\newcommand{\bff}{ \mbox{\boldmath $f$}}
+\newcommand{\bg} { \mbox{\boldmath $g$}}
+\newcommand{\bh} { \mbox{\boldmath $h$}}
+\newcommand{\bii} { \mbox{\boldmath $i$}}
+\newcommand{\bj} { \mbox{\boldmath $j$}}
+\newcommand{\bk} { \bm{k} }
+%\newcommand{\bk} { \mbox{\boldmath $k$}}
+\newcommand{\bl} { \mbox{\boldmath $l$}} 
+\newcommand{\bmm} { \mbox{\boldmath $m$}}
+\newcommand{\bn} { \mbox{\boldmath $n$}}
+\newcommand{\bo} { \mbox{\boldmath $o$}}
+\newcommand{\bp} { \bm{p} }
+\newcommand{\bq} { \bm{q} }
+%\newcommand{\bq} { \mbox{\boldmath $q$}}
+\newcommand{\br} { \boldsymbol{r}}
+\newcommand{\bs} { \mbox{\boldmath $s$}}
+\newcommand{\bt} {\boldsymbol{t}} 
+\newcommand{\bu} { \mbox{\boldmath $u$}}
+\newcommand{\bv} { \mbox{\boldmath $v$}}
+\newcommand{\bw} { \mbox{\boldmath $w$}}
+\newcommand{\bx} { \mbox{\boldmath $x$}}
+\newcommand{\by} { \mbox{\boldmath $y$}}
+\newcommand{\bz} { \mbox{\boldmath $z$}}
+
+\newcommand{\bA} { \mbox{\boldmath $A$}}
+\newcommand{\bB} { \mbox{\boldmath $B$}}
+\newcommand{\bC} { \mbox{\boldmath $C$}}
+\newcommand{\bD} { \mbox{\boldmath $D$}}
+\newcommand{\bE} { \mbox{\boldmath $E$}}
+\newcommand{\bF} { \mbox{\boldmath $F$}}
+\newcommand{\bG} { \mbox{\boldmath $G$}}
+\newcommand{\bH} { \mbox{\boldmath $H$}}
+\newcommand{\bI} { \mbox{\boldmath $I$}}
+\newcommand{\bJ} { \mbox{\boldmath $J$}}
+\newcommand{\bK} { \boldsymbol{K} }
+\newcommand{\bL} { \mbox{\boldmath $L$}}
+\newcommand{\bM} { \mbox{\boldmath $M$}}
+\newcommand{\bN} { \mbox{\boldmath $N$}}
+\newcommand{\bO} { \mbox{\boldmath $O$}}
+\newcommand{\bP} { \mbox{\boldmath $P$}}
+\newcommand{\bQ} { \boldsymbol{Q} }
+%\newcommand{\bQ} { \mbox{\boldmath $Q$}}
+\newcommand{\bR} { {\mathbf R} }
+%\newcommand{\bR} { \mbox{\boldmath $R$}}
+\newcommand{\bS} { \mbox{\boldmath $S$}}
+\newcommand{\bT} { \mbox{\boldmath $T$}}
+\newcommand{\bU} { \mbox{\boldmath $U$}}
+\newcommand{\bV} { \mbox{\boldmath $V$}}
+\newcommand{\bW} { \mbox{\boldmath $W$}}
+\newcommand{\bX} { \mbox{\boldmath $X$}}
+\newcommand{\bY} { \mbox{\boldmath $Y$}}
+\newcommand{\bZ} { \mbox{\boldmath $Z$}}
+\newcommand{\bzero} { {\boldsymbol{0}}}
+\newcommand{\bfell} {\mbox{\boldmath $ \ell $}}
+\newcommand{\dH}{{\mathbb{H}}}
+
+%
+%special math symbols
+%
+\newcommand{\dou}{\partial}
+\newcommand{\leftjb} {[\![}
+\newcommand{\rightjb} {]\!]}
+\newcommand{\ju}[1]{ \leftjb #1 \rightjb }
+\newcommand{\D}[1]{\mbox{d}{#1}} 
+\newcommand{\grad}{\mbox{\boldmath $\nabla$}}
+\newcommand{\modulus}[1]{|#1|}
+\renewcommand{\div}[1]{\grad \cdot #1}
+\newcommand{\curl}[1]{\grad \times #1}
+\newcommand{\mean}[1]{\langle #1 \rangle}
+\newcommand{\bra}[1]{{\langle #1 |}}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\dbdou}[2]{\frac{\dou #1}{\dou #2}}
+\newcommand{\dbdsq}[2]{\frac{\dou^2 #1}{\dou #2^2}}
+\newcommand{\Pint}[2]{ P \!\!\!\!\!\!\!\int_{#1}^{#2}}
+\newcommand{\detune}{{\updelta}}
+%
+%abbreviations for equations etc
+% 
+\newcommand{\eqn}[1] {eqn.~(\ref{#1})}
+\newcommand{\Eqn}[1] {Eqn.~(\ref{#1})}
+\newcommand{\prn}[1] {(\ref{#1})}
+\newcommand{\sect}[1] {Section~\ref{#1}}
+\newcommand{\Sect}[1] {Section~\ref{#1}}
+\newcommand{\fig}[1]{fig.~\ref{#1}}
+\newcommand{\Fig}[1]{Fig.~\ref{#1}}
+
+
+%
+% Roman Numerals
+%
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+%
+%Other utilities
+%
+\newcommand{\uncon}[1]{\centerline{\epsfysize=#1 \epsfbox{/usr2/shenoy/styles/construction.eps}}}
+\newcommand{\checkup}[1]{{(\tt #1)}\typeout{#1}}
+\newcommand{\ttd}[1]{{\color[rgb]{1,0,0}{\bf #1}}}
+\newcommand{\ttds}[1]{{\color[rgb]{0,0,1}{\bf #1}}}
+\newcommand{\red}[1]{{\color[rgb]{1,0,0}{\protect{#1}}}}
+\newcommand{\blue}[1]{{\color[rgb]{0,0,1}{#1}}}
+\newcommand{\green}[1]{{\color[rgb]{0.0,0.5,0.0}{#1}}}
+\newcommand{\citebyname}[1]{\citeauthor{#1}\cite{#1}}
+\newcommand{\signum}[0]{\mathop{\mathrm{sign}}}
+\newcommand{\skup}{\ket{s \uparrow}}
+\newcommand{\skdn}{\ket{s \downarrow}}
+\newcommand{\pkup}{\ket{p \uparrow}}
+\newcommand{\pkdn}{\ket{p \downarrow}}
+\newcommand{\sbup}{\bra{s \uparrow}}
+\newcommand{\sbdn}{\bra{s \downarrow}}
+\newcommand{\pbup}{\bra{p \uparrow}}
+\newcommand{\pbdn}{\bra{p \downarrow}}
+
+%width of figures
+\newlength{\myfigwidth}
+\setlength{\myfigwidth}{0.43\textwidth}
+\newlength{\myhalffigwidth}
+\setlength{\myhalffigwidth}{0.5\myfigwidth}
+
+
+\newcommand{\asc}{a_{sc}}
+\newcommand{\as}{a_{s}}
+\newcommand{\azero}{a_{0}}
+\newcommand{\Eb}{E_{b}}
+\newcommand{\Ef}{E_F}
+\newcommand{\kf}{k_F}
+\newcommand{\cF}{{\cal F} }
+\newcommand{\ie}{{i.e., } }
+\newcommand{\etaT}{{\eta_t}}
+\newcommand{\muNI}{{\mu_{NI}}}
+\newcommand{\halfsum}[1]{\displaystyle{\sum^{\sim}_{#1}}}
+
+\newcommand{\upsilontilde}{{\tilde{\upsilon}}}
+\newcommand{\sthre}{{\varepsilon_{th}^s}}
+\newcommand{\ethre}{{\varepsilon_{th}}}
+\newcommand{\ebse}{{\varepsilon_{bs}}}
+\newcommand{\egse}{{\varepsilon_{gs}}}
+\newcommand{\epsr}{{\varepsilon_{r}}}
+\newcommand{\abg}{{a}_{bg}}
+\newcommand{\Binf}{B_\infty}
+\newcommand{\Bzero}{B_0}
+\newcommand{\sechead}[1]{{\noindent $\bigstar$ {\sc #1}}}
+\newcommand{\eCCB}{\varepsilon_\phi}
+\newcommand{\Tm}{\mathbb{T}}
+\newcommand{\cG}{{\cal G}}
+\newcommand{\cH}{{\cal H}}
+\newcommand{\cHGF}{{\cH^{GF}}}
+\newcommand{\HGF}{{H^{GF}}}
+
+%set this to see the name of the labels in the margins
+\newcommand{\mylabel}[1]{\label{#1}{\marginnote{\footnotesize{\tt #1}}}}
+%
+%or this for this for doing nothing
+%\newcommand{\mylabel}[1]{\label{#1}} 
+
+%%
+
+\newcommand{\myonlinecite}[1]{[\onlinecite{#1}]}
+%%%%%\newcommand{\mycite}[1]{{\tt[#1]}\cite{#1}}
+\newcommand{\mycite}[1]{\cite{#1}}
+
+
+%\renewcommand{\hline}{\midrule}
+%\setlength{\midrulewidth}{0.1 em}
+%%STUFFforlinenumbers
+\usepackage{lineno}
+%\setpagewiselinenumbers
+%\modulolinenumbers[5]
+%\linenumbers
+
+
+\newcommand{\assnum}{EX}
+\newcommand{\duedate}{Self Test}
+\input{../../Resources/head}
+
+
+
+
+
+
+%\pagestyle{empty}
+
+\relax
+\begin{document}
+%\makehead
+\logo
+
+\centerline{ \sc Examination, 19 May 2020}
+
+\bigskip
+
+\centerline{{\bf Instructions}}
+\begin{itemize}
+\item This question paper will be available on the course web page and will be sent by email to all those who have responded with their phone numbers.
+\item As soon as you download the paper/or receive the email, kindly reply to the email that you have received the paper and are attempting it. Your return email will be treated as signing of the attendance sheet.
+\item You may use up to 180 minutes to produce answers. You must time yourself.
+\item You must adopt the highest standards of academic integrity. You should neither consult the internet, or any of your friends, or not-so-friends.
+\item Your completed scripts should be scanned in {\bf PDF format}, and emailed to { \tt ph340.qsft@gmail.com} with a copy to {\tt shenoy@iisc.ac.in}. You email must reach these addresses {\bf NO LATER THAN 17:00HRS on 19 May 2020}.
+\item Please ensure that your script contains your name and roll number.
+\item You really do not need to refer to any text, notes etc.~as most of the questions can be answered with a clear conceptual understanding.
+\item The grading of your work will be done by you in the regular class meeting on 17:30 on the 19th. 
+\item Note that all questions are not of equal difficulty; some are routine, some  not.
+\end{itemize}
+
+\medskip
+
+\noindent
+
+\begin{enumerate}
+\problem{ {\bf ``Majorana Boson'':} You may have heard a lot about ``Majorana fermions'' -- particularly the statement that a {\em Majorana fermion is a fermionic particle that is its own antiparticle}! In the problem we will explore the possibility a ``Majorana Boson''
+\begin{enumerate}
+\item Let $a$ be a {\em bosonic operator}. Define an operator $\Phi = a + a^\dagger$. Free marks: Show that $\Phi^\dagger = \Phi$. This means that $\Phi$ is its own antiparticle, and hence a candidate ``Majorana boson''!
+\item What are the possible eigenvalues $\phi$  of $\Phi$ that satisfy the equation 
+\bea \non
+\Phi \ket{\phi} = \phi \ket{\phi}
+\eea
+The space spanned by these eigenstates , i.~e., $\textup{span}\{\ket{\phi}\}$, is the Hilbert space of the Majorana boson.
+\item Write a(n)  (over)completeness relation using the eigenstates  $\ket{\phi}$.
+\item Suppose $A$ is the operator acting on $\textup{span}\{\ket{\phi}\}$, the space spanned by the states $\ket{\phi}$, write an expression for the  the trace of $A$ using the (over)completeness relation developed in the previous part.
+\item Consider a one-dimensional chain of Majorana boson system, where sites are dnoted by $i,j$ etc. The Majorana boson operators satisfy 
+\bea\non
+[\Phi_i,\Phi_j] = 0
+\eea 
+Let the Hamiltonian of this system be
+\bea\non
+H = \sum_i V(\Phi_{i+1}, \Phi_i)
+\eea 
+where $V$ a function (that is as yet unspecified) that determines the interaction between the Majorana boson  at site $i$ and the one at site $i+1$. Assuming the system to be $N$ site chain with periodic boundary conditions, obtain a path integral formulation for the partition function of the system at temperature $T$. Comment on what ``classical problem'' does this correspond to.
+\item Suppose you were writing a paper summarizing the findings of this exercise. Find an approriate title with not more than ten words, and write an abstract no longer than one hundred words. (The shorter and crisper the abstract, the better!)
+\end{enumerate}
+
+}
+
+\problem{{\bf Two sites, again!} 
+	Consider {\em spinless} fermions that populate {\em two sites} labelled 1 and 2. The hamiltonian of the system is
+	\bea \non
+	H = -t \left( c^\dagger_1 c_2 + c^\dagger_2 c_1 \right) + V c^\dagger_2 c^\dagger_1 c_1 c_2  - \mu (c^\dagger_1 c_1 + c^\dagger_2 c_2)
+	\eea
+	\begin{enumerate}
+		\item What is the dimension of the Hilbert-Fock space of the system? Write out the basis states.
+		\item By explicit diagonalization of the Hamiltonian expressed in the above basis, find the exact eigenstates and eigenvalues.
+		\item Comment on the physics of the system for $V>0$ and $V<0$.
+		\item Use the exact eigensystem to compute the free energy of the system at temperature $T$.
+		\item Apply an ``external stimulus potential'' $\phi$ at site $1$, what is the frequency dependent ``density response'' (described by operator $n_1 = c^\dagger_1 c_1$) at site $1$. (Hint: Use Lehman representation.)
+		For the same stimulus, what is the density response at site $2$. Does your answer make sense?
+		\item Using Grassmann calculus, obtain an expression for the free energy. Your answer must agree with what you found above. 
+		\item Find a path integral expression for the partition function.
+		\item Treating $V$ as a perturbation, set up a diagrammatic expansion for the free energy. Identify all connected diagrams at order $2$. 
+		\item Set up the diagrammatic expansion for the onsite Green's functoin $\cG_{11}(\tau) = -\mean{T_\tau c_1(\tau) c^\dagger_1(0)}$, and obtain all self energy terms up to order $V^2$ (it will be simpler to work with $\cG_{11}(i \omega_n)$). 
+		\end{enumerate}
+
+ 
+}
+
+\problem{{\bf Infrared Symmetries} Consider a tight binding chain of spinless fermions
+	\bea \non
+	H = -t \sum_i \left(c^\dagger_{i+1} c_i + c^\dagger_i c_{i+1} \right) - \mu \sum_i c^\dagger_i c_i
+	\eea
+the coordinate of the site $i$ is $i a$ where $a$ is the lattice spacing.
+
+\begin{enumerate}
+	\item What the symmetries of this system? Is it Galielean invariant?
+	\item Consider $\mu = -2t + t/10$. What is the ground state of the system? What is the Fermi momentum $k_F$?
+	\item Now we will consider {\em low energy} physics and develop a {\em continuum}  (in real space)  field theory for this problem. Choose a momentum a cut off momentum $\Lambda \ll k_F$. ($\Lambda$ could be, for example, set by the maximum temperature that you will wish to investigate.) Consider, the fourier transform
+	\beq\non
+	c_{i} =  \sum_{k} e^{i k x_i} c_k
+	\eeq	
+	and look for a {\em low energy } expansion keeping only the ``modes'' close to the Fermi surface. Also, we define a continuum field
+	\beq\non
+	\begin{split}
+	\psi(x) &= \frac{1}{\sqrt{a}}c_i = \sum_{k \in [-\Lambda, + \Lambda]} e^{i (-k_F + k) x} c_{-k_F + k} + \frac{1}{\sqrt{a}}\sum_{k \in [-\Lambda, \Lambda]}e^{i (k_F + k) x} c_{k_F + k} \\
+	&= e^{-ik_F x} \psi_L(x) + e^{i k_F x} \psi_R(x)
+	\end{split}
+	\eeq
+where $\psi_L(x)$ is the ``left moving'' field ad $\psi_L(x)$ is the right moving field. This last equation can be written even nicely
+\beq\non
+\psi(x) = \sum_{\nu = \pm 1} e^{i \nu k_F x} \psi_\nu(x)
+\eeq 
+where $\nu = -1$ is the left mover, and $\nu = 1$ is the right mover.
+Find an expression for the ``continuum Hamiltonian''
+\beq\non
+H = \int \D{x} \, \left( ..... \right),
+\eeq
+you have to find $\left( ..... \right)$. 
+\item Write down a path integral for the parition function in terms of Grassman fields $\psi_\nu(x,\tau)$, and obtain the ``classical action'' of this system.
+\item Show that the system has an emergent Lorentz invariance (!); what is the speed of light?
+\end{enumerate}
+}
+
+\end{enumerate}
+
+\end{document}
+
+\problem{ {\bf Double Well -- Where Most Physics Is!} A particle of mass $m$ moves in a potential ($1d$) $V(x) = - \half k_2 x^2 + \half k_4 x^4$ where both $k_2, k_4$ are non-negative. Answer the following questions, first taking that the mechanics is classical, and second, taking the mechanics as quantum:
+	\begin{enumerate}
+		\item Write out the Hamiltonian. What are the ``natural'' energy scales in the system.
+		\item What are the symmetries of the system? Write down  expressions of the symmetry operators (think carefully how you would do this in the classical context).
+		\item What is the groud state (lowest energy configuration) of the system? Does it break any symmetires?
+		\item What is the first excited state of the system? The spirit of this question is to find out if there is an excitation gap (not necessarily to find the excited state),
+	\end{enumerate}
+	
+	Comment on the difference between classical and quantum mechanics. What key idea(s) of physics does this exercise demonstrate?
+	
+}
+
+\problem{ {\bf Bread and Butter...on a Square Lattice} Consider a 2-dimensional square lattice with nearest neighbour hopping $t$ on which spin-$1/2$ electrons hop around. Lattice points are labelled by $I$, and the system has $N=L \times L$ lattice points with periodic boundary conditions.
+	\begin{enumerate}
+		\item Write out the second quantized Hamiltonian of the system in terms of electron operators $c^\dagger_{I \sigma}$ (and  $c_{I \sigma}$)
+		\item Describe the 1-st Brilloun zone of the system. Which momenta $\bk$ in the Brillouin zone are allowed (hint: periodic boundary conditions)? How many such $\bk$s are there?
+		\item Write $c^\dagger_{I \sigma}$ in terms of $c^\dagger_{\bk \sigma}$, and use this to obtain a diagonalized (second quantized) Hamiltonian.
+		\item Given a filling $f \ll 1$, find an approximate chemical potential at $T=0$ (zero temperature), and describe the ground state of the system.
+		\item At the small filling $f \ll 1$ as above, what is the  low temperature behaviour of the specific heat? 
+	\end{enumerate}
+}
+
+\problem{{\bf What can a lone orbital teach us?} Consider a system with a {\em single orbital} whose energy is $\varepsilon_0$. This system is kept in contact with a fermion bath at temperature $T$ and chemical potential $\mu$.
+	\begin{enumerate}
+		\item Write a second quantized Hamiltonain for this system (including the chemical potential).
+		\item What is the equilibrium density matrix?
+		\item Using the density matrix, find the expectation value of the number of fermions in this system as a function of temperature ($\mu$ is fixed).
+		\item What is the characteristic energy scale in the system? Find an expression for  specific heat of the system. What is the behaviour at low temperature (compared to characteristic scale)? What is the behaviour at high temperature (again compared to the characteristic scale)? Are you surprised?
+	\end{enumerate}
+}
+\item{ {\bf ..and what can two sites teach us?}Consider a fermionic system with two sites, 1 and 2. Each site can accommodate a single fermion. Fermions can hop between sites $1$ and $2$ with amplitude $t$. There is also an interaction $V$ between a fermion at site $1$ with that at site $2$.
+	\begin{enumerate}
+		\item Describe the Hilbert-Fock space of the system.
+		\item Write a second quantized Hamiltonain.
+		\item Find the spectrum of the Hamiltonain for every particle number sector.
+		\item If this system is kept in contact with a bath $(T, \mu)$, what is the expectation value of the number of fermions as a function of $T$ for a given $\mu$. $T$ is temperature, $\mu$ is chemical potential.
+		\item Is any special case of the system described here related to any other question of this problem set? If yes, which one? Elaborate.
+	\end{enumerate}
+}
+
+\problem{{\bf Disorder...a first look:} Based on a set of experiments on the spectra of a certain finite dimensional system, a physicist posits that the system has $L$ orbitals in which a single particle hops around. She writes down a Hamiltonian 
+	\bea\nonumber
+	H = -\sum_{i,j=1,\ldots,L} t_{ij} c^\dagger_{i} c_j
+	\eea
+	with the condition $t_{ji} = t^*_{ij}$. Based on an inspiration, she further realizes that the hoppings are of a ``separable'' form, i.~e., 
+	\bea\nonumber
+	t_{ij} = f^*_i f_j
+	\eea
+	where $f_i$ are complex numbers associated with each orbital. She decides that $f_i$ are random, plausibly  Gaussian distributed and independent, i.~e.,
+	\bea\nonumber
+	P(f) = C e^{- a |f|^2} 
+	\eea
+	where $a$ is a real quantity (with what dimensions?), and $C$ is a normalization constant (that you can determine).
+	Find the ensemble averaged single particle density of states of this system.
+}
+\end{enumerate}  
+
+\end{document}
+
+
+\problem{{\bf Properties of response functions:} We obtained the Kubo formula, and the associated frequency representation for $\chi_{AB}(\omega) = \chi'_{AB}(\omega)+ i \chi''_{AB}(\omega)$.
+\begin{enumerate}
+\item Derive the Kramers-Kr\"onig relation between the real and imaginary parts of $\chi_{AB}(\omega)$.
+\item What is the ``physical content'' of the real and imaginary parts of $\chi_{AB}(\omega)$? Substantiate your answer.
+\item Consider the case $B = A$ (this case is frequently encountered in calculation of response function -- list a few). Consider the quantity $K_{A}(t - t') = \mean{A(t)A(t')}_0 $ -- the is the so called ``auto-correlation function'' of $A$ in equilibrium. How is $K_{AA}(\omega)$ related to $\chi_{AA}(\omega)$? The relationship that you will find is the famous ``Fluctuation-Dissipation theorem''!
+\end{enumerate}
+}
+
+\problem{{\bf Density response of a free Fermi gas:} Consider a free gas of (spinless) fermions of density $\rho$ in $d$ spatial dimensions ($\rho$ will have appropriate units). A spatio-temporal potential $V(t,\br)$ is applied to the gas (how can you actually do such a thing?). We are interested in the density response $\delta\rho(t,\br)$.
+\begin{enumerate}
+\item Write the expression for the response function $\chi_{\rho \rho}(t,\br)$ using the Kubo formula.
+\item Write the Lehman representation of $\chi_{\rho\rho}(\omega,\bq)$.
+\item Obtain the imaginary part of $\chi_{\rho \rho}(\omega,|\bq|)$ in $d=3$ and $d=1$ (also in $d=2$, if you like) at a given temperature $T (= \beta^{-1})$. Use Mathematica and make a plot of this.
+\item What did you learn from this exercise?
+\item Study $\lim_{\omega \rightarrow 0}\lim_{|\bq| \rightarrow 0} \chi_{\rho \rho}(|\bq|,\omega)$ and $\lim_{|\bq| \rightarrow 0}\lim_{\omega \rightarrow 0}  \chi_{\rho \rho}(|\bq|,\omega)$. Are you surprised? Why should (shouldn't) you be?
+\item Repeat the above for a free Bose gas in $d =3$ and 1.
+\end{enumerate}
+
+}
+
+\problem{{\bf Static response:} Many a time, we look for the {\em static response} of a system, such as as the magnetic susceptibility. 
+\begin{enumerate}
+\item Show that static susceptibility  $\chi_{AB} =  \int_0^\beta \D{\tau} \, \mean{A(\tau)B}_0 - \beta \mean{A}_0 \mean{B}_0 $
+\item Use the above expression to obtain Curie law of paramagnetism.
+\item Suppose you were to try to obtain Curie law from the {\em real time} Kubo formula, what will you find? Work out the details, and reconcile the two results.
+\end{enumerate}
+}
+
+\problem{{\bf Conductivity of a dirty metal:} Consider the model of a disordered metal where we consider the electrons to be noninteracting (spin is also not important in this context). The one-particle Hamiltonain is given by $H_d =\frac{\bp^2}{2 m} + V_d(\br)$ where $V_d(\br)$ is the disorder potential. The density of electrons (mass $m$) is $\rho$.
+\begin{enumerate}
+\item Consider the problem to be in 3D continuum. 
+\begin{enumerate}
+\item Show that the conductivity tensor is given by
+\bea
+\sigma^{\alpha \beta}(\omega,\bq) = \frac{1}{i \omega} \mean{\mean{\chi^{\alpha \beta}_{JJ}(\omega,\bq)}} - \frac{\rho e^2}{m} \delta^{\alpha \beta} \delta(\omega) \nonumber
+\eea
+where $J$ is the current operator. Obtain an expression for $\chi_{JJ}^{\alpha \beta}(\omega,\bq)$, noting that $\mean{\mean{}}$ is the thermal average of the disorder average. {\sc Info:} The first term is called the ``paramagnetic'' term, and the second term is called the ``diamagnetic'' term. {\em Hint for this part:} Write the applied  electric field in terms of the vector potential.
+\item Obtain a Lehmann representation of the conductivity tensor based on the exact eigenstates of $H_d$.
+\end{enumerate}
+\item Suppose this problem were on a square lattice tight binding model with nearest neighbour hopping $t$. The disorder potential $V_d$ is given as
+\begin{eqnarray}
+V_d = \sum_i w_i \ket{i}\bra{i} \nonumber
+\end{eqnarray} 
+where $w_i$ is a {\em random} potential uniformly distributed from $-W$ to $+W$. 
+\begin{enumerate}
+\item What is the expression for the conductivity tensor?
+\item Express this in the Lehmann representation.
+\item Write a computer programme to obtain the eigenstates of the disorder potential and numerically obtain $\sigma(\omega)$ using the Lehmann representation for various values of $W/t$. What is the low frequency behaviour of $\sigma(\omega)$?
+\end{enumerate}
+\end{enumerate}
+}
+
+\end{enumerate}
+
+
+\asgnover
+
+\end{document}
+
+\problem{{\bf Spin Operator:} For a spin half particle, $c^\dagger_\uparrow$ and   $c^\dagger_\downarrow$ operating on vacuum create the eigenstates of the $S_z$ operator.
+\begin{enumerate}
+\item Derive an expression for the spin operator $\bS$ (note: this is a vector operator) in terms of $c^\dagger_\uparrow$, $c^\dagger_\downarrow$ and conjugates.
+\item Write an expression for the eigenstates of $S_x$ in terms of $c^\dagger_\uparrow$, $c^\dagger_\downarrow$ and $\ket{\Omega}$. Using the previous express for $\bS$, verify (with an explicit calculation) that your answer is correct.
+
+\end{enumerate}
+}
+
+\problem{{\bf Hopping Hamiltonian:} Consider a 1D lattice of $N$ sites with periodic boundary conditions. The operator $c^\dagger_{i\sigma}$ creates a paricle of spin $\sigma$ at site $i$. The particle at site $i$ can ``hop'' to site $i+i$ or $i-1$ with an amplitude $t$. 
+\begin{enumerate} 
+\item Write a second quantized expression for the Hamiltonian.
+\item Write  expressions for the number operator. Is the number of electrons conserved?
+\item Diagonalize the Hamiltonian (within  the second quantized framework). The energy eigenvalues should be familiar to you, and you will know if you have done it right.
+\item Do your answer(s) above depend on the particles being Bosons or Fermions? Comment.
+\end{enumerate}
+}
+
+\problem{{\bf A Grand and Canonical Problem!} Consider a system with single particle states labeled by $\alpha$ with energies $\epsilon_\alpha$.
+\begin{enumerate}
+\item Write expressions for the Hamiltonian ${\cal H}$ and number ${\cal N}$ operators. This should be really trivial by now.
+\item The grand partition function is given by the expression $\displaystyle{\mbox{Tr}\,e^{-\beta({\cal H} - \mu {\cal N})}}$, where $\mu$ is the chemical potential, and Tr denotes trace. Starting from here, and using second-quantized-algebra, show that the average occupation number of the state $\alpha$ is
+\bea
+n_\alpha = \frac{1}{e^{\beta(\epsilon_\alpha - \mu)} \mp 1} \non
+\eea
+where $-$ is for Bosons and $+$ is for Fermions. If you have done this calculation by the ``elementary way'', you will realize the power of the second quantized notation!
+\end{enumerate}
+}
+
+\end{enumerate}
+
+
+
+\asgnover
+
+\end{document}
+
+
+\problem{{\bf Harmony:} Consider a harmonic potential well in 1D. Recall the single particle eigenstates and eigenvalues(Revise this material, if you are rusty). We will consider many(noninteracting)-particle situation in this well. 
+\begin{enumerate}
+\item Find a second quantized representation of the Hamiltonian. (Will (should) this be different for Bosons and Fermions?)
+
+\end{enumerate}
+}
+
+
